@@ -5,18 +5,27 @@ export default function App() {
   return (
     <View style={styles.container}>
       <View style={styles.containerTop}>
-        <View style={styles.top}>
-          <Text style={styles.topText}>Top Left</Text>
-        </View>
-      </View>
-      <View style={styles.containerCenter}>
-        <View style={styles.center}>
-          <Text style={styles.centerText}>Center</Text>
-        </View>
+        <Text style={styles.topText}>
+          Top
+        </Text>
       </View>
       <View style={styles.containerBottom}>
-        <View style={styles.bottom}>
-          <Text style={styles.bottomText}>Bottom Right</Text>
+        <View style={styles.bottomLeft}>
+          <Text style={styles.bottomLeftText}>
+            Bottom Left
+          </Text>
+        </View>
+        <View style={styles.bottomRight}>
+          <View style={styles.topRight}>
+            <Text style={styles.topRightText}>
+              Top Right
+            </Text>
+          </View>
+          <View style={styles.bottomRight}>
+            <Text style={styles.bottomRightText}>
+              Bottom Right
+            </Text>
+          </View>
         </View>
       </View>
     </View>
@@ -24,59 +33,58 @@ export default function App() {
 }
 
 const styles = StyleSheet.create({  
-  container: {
-    flex: 1,
-    backgroundColor : '#92f1f1',
+  container : {
+    flex : 1,
   },
-  containerTop: {
-    flex: 1,  
+  containerTop : {
+    flex : 1,
+    backgroundColor : '#f3fe7c',
+    justifyContent : 'center',
+    alignItems : 'center',
   },
-  top: {
-    marginTop: 30,
-    marginHorizontal: 10,
-    paddingVertical: 20,
-    paddingHorizontal: 10,
-    backgroundColor: '#FFFFFF',
-    borderWidth: 2,
-    borderColor: 'red',
+  topText : {
+    color : '#579e86',
+    fontWeight : 'bold',
+    fontSize : 20,
   },
-  topText: {
-    color: '#4682b4',
-    fontWeight: 'bold',
-    fontSize: 20
+  containerBottom : {
+    flex : 1,
+    flexDirection : 'row'
   },
-  containerCenter: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+  bottomLeft : {
+    flex : 1,
+    justifyContent : 'center',
+    alignItems : 'center',
+    backgroundColor : '#36f4a2',
   },
-  center: {
-    width: 200,
-    height: 200,
-    backgroundColor: '#5df153',
-    borderRadius: 100,
-    justifyContent: 'center',
-    alignItems: 'center',
+  bottomLeftText : {
+    color : '#579e86',
+    fontWeight : 'bold',
+    fontSize : 20,  
   },
-  centerText: {
-    color: '#4682b4',
-    fontWeight: 'bold',
+  bottomRight : {
+    flex : 1,
   },
-  containerBottom: {
-    flex: 1,
+  topRight : {
+    flex : 2,
+    backgroundColor : '#f436e7',
+    justifyContent : 'center',
+    alignItems : 'center',
   },
-  bottom: {
-    marginTop: 120,
-    marginHorizontal: 10,
-    paddingHorizontal: 20,
-    paddingVertical: 20,
-    borderRadius: 20,
-    backgroundColor: '#0098ff',
-    borderColor: '#f44336',
+  bottomRight : {
+    flex : 1,
+    backgroundColor : '#3688f4',
+    justifyContent : 'center',
+    alignSelf : 'center'
   },
-  bottomText: {
-    textAlign: 'right',
-    fontWeight: 'bold',
-    color: 'white',
+  bottomRightText : {
+    color : '#579e86',
+    fontWeight : 'bold',
+    fontSize : 20,  
+  },
+  topRightText : {
+    color : '#579e86',
+    fontWeight : 'bold',
+    fontSize : 20,  
   }
 });
