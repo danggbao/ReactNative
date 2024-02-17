@@ -4,87 +4,73 @@ import { StyleSheet, Text, View } from 'react-native';
 export default function App() {
   return (
     <View style={styles.container}>
-      <View style={styles.containerTop}>
-        <Text style={styles.topText}>
-          Top
+      <View style={styles.header}>
+        <Text style={textStyles.header}>
+          Todo List
         </Text>
       </View>
-      <View style={styles.containerBottom}>
-        <View style={styles.bottomLeft}>
-          <Text style={styles.bottomLeftText}>
-            Bottom Left
-          </Text>
-        </View>
-        <View style={styles.bottomRight}>
-          <View style={styles.topRight}>
-            <Text style={styles.topRightText}>
-              Top Right
-            </Text>
+      <View style={styles.body}>
+        <View style={styles.item}>
+          <View style={styles.square}>
+            <Text>01</Text>
           </View>
-          <View style={styles.bottomRight}>
-            <Text style={styles.bottomRightText}>
-              Bottom Right
-            </Text>
+          <View>
+            <Text>Abc</Text>
           </View>
         </View>
+        <View style={styles.item}>
+          <View style={styles.square}>
+            <Text>02</Text>
+          </View>
+          <View>
+            <Text>Def</Text>
+          </View>
+        </View>
+      </View>
+      <View style={styles.footer}>
+
       </View>
     </View>
   );
 }
 
-const styles = StyleSheet.create({  
+const styles = StyleSheet.create({
   container : {
     flex : 1,
+    backgroundColor : '#eaf3fd',
   },
-  containerTop : {
+  header : {
     flex : 1,
-    backgroundColor : '#f3fe7c',
-    justifyContent : 'center',
+    paddingTop : 20,
+    paddingHorizontal : 10
+  },
+  body : {
+    flex: 1
+  },
+  item : {
+    flexDirection : 'row',
+    backgroundColor : '#ffffff',
+    paddingVertical : 3,
+    paddingHorizontal : 20,
+    marginBottom : 15,
+    borderRadius : 18,
     alignItems : 'center',
+    justifyContent : 'space-between'
   },
-  topText : {
-    color : '#579e86',
-    fontWeight : 'bold',
-    fontSize : 20,
-  },
-  containerBottom : {
-    flex : 1,
-    flexDirection : 'row'
-  },
-  bottomLeft : {
-    flex : 1,
+  square : {
+    width : 48,
+    height : 36,
+    borderRadius : 10,
+    backgroundColor : '#34a9e6',
     justifyContent : 'center',
-    alignItems : 'center',
-    backgroundColor : '#36f4a2',
-  },
-  bottomLeftText : {
-    color : '#579e86',
-    fontWeight : 'bold',
-    fontSize : 20,  
-  },
-  bottomRight : {
-    flex : 1,
-  },
-  topRight : {
-    flex : 2,
-    backgroundColor : '#f436e7',
-    justifyContent : 'center',
-    alignItems : 'center',
-  },
-  bottomRight : {
-    flex : 1,
-    backgroundColor : '#3688f4',
-    justifyContent : 'center',
-    alignSelf : 'center'
-  },
-  bottomRightText : {
-    color : '#579e86',
-    fontWeight : 'bold',
-    fontSize : 20,  
-  },
-  topRightText : {
-    color : '#579e86',
-    fontWeight : 'bold',
-    fontSize : 20,  
+    alignItems : 'center'
+  }
+});
+
+const textStyles = StyleSheet.create({
+  header : {
+    fontSize : 26,
+    color : '#58cdee',
+    fontWeight : 'bold'
   }
 });
