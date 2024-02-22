@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, ScrollView } from 'react-native';
 
 export default function App() {
   return (
@@ -10,22 +10,18 @@ export default function App() {
         </Text>
       </View>
       <View style={styles.body}>
-        <View style={styles.item}>
-          <View style={styles.square}>
-            <Text style={textStyles.squareText}>01</Text>
-          </View>
-          <View style={textStyles.contentText}>
-            <Text>Rua chen</Text>
-          </View>
-        </View>
-        <View style={styles.item}>
-          <View style={styles.square}>
-            <Text style={textStyles.squareText}>02</Text>
-          </View>
-          <View style={textStyles.contentText}>
-            <Text>Lau nha</Text>
-          </View>
-        </View>
+        <ScrollView>
+          <TouchableOpacity>
+            <View style={styles.item}>
+              <View style={styles.square}>
+                <Text style={textStyles.squareText}>01</Text>
+              </View>
+              <View style={textStyles.contentText}>
+                <Text>Rua chen</Text>
+              </View>
+            </View>
+          </TouchableOpacity>
+        </ScrollView>
       </View>
       <View style={styles.footer}>
 
