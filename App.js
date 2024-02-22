@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, TouchableOpacity, ScrollView } from 'react-native';
-
+import Task from './components/Task';
 export default function App() {
   return (
     <View style={styles.container}>
@@ -10,17 +10,8 @@ export default function App() {
         </Text>
       </View>
       <View style={styles.body}>
-        <ScrollView>
-          <TouchableOpacity>
-            <View style={styles.item}>
-              <View style={styles.square}>
-                <Text style={textStyles.squareText}>01</Text>
-              </View>
-              <View style={textStyles.contentText}>
-                <Text>Rua chen</Text>
-              </View>
-            </View>
-          </TouchableOpacity>
+        <ScrollView style={styles.items}>
+          <Task></Task>
         </ScrollView>
       </View>
       <View style={styles.footer}>
@@ -43,26 +34,9 @@ const styles = StyleSheet.create({
   body : {
     flex: 8,
   },
-  item : {
-    flexDirection : 'row',
-    backgroundColor : '#ffffff',
-    paddingVertical : 5,
-    paddingHorizontal : 20,
-    marginBottom : 10,
-    marginHorizontal : 8,
-    borderRadius : 8,
-    alignItems : 'center',
-    justifyContent : 'space-between'
-
+  items : {
+    marginVertical : 5,
   },
-  square : {
-    width : 48,
-    height : 36,
-    borderRadius : 10,
-    backgroundColor : '#34a9e6',
-    justifyContent : 'center',
-    alignItems : 'center'
-  }
 });
 
 const textStyles = StyleSheet.create({
@@ -71,12 +45,4 @@ const textStyles = StyleSheet.create({
     color : '#58cdee',
     fontWeight : 'bold' 
   },
-  squareText : {
-    color : '#fff',
-    fontWeight : '700'
-  },
-  contentText : {
-    width : '80%',
-    fontSize : 16,
-  }
-});
+})
