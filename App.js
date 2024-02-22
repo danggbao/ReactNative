@@ -12,18 +12,18 @@ export default function App() {
       <View style={styles.body}>
         <View style={styles.item}>
           <View style={styles.square}>
-            <Text>01</Text>
+            <Text style={textStyles.squareText}>01</Text>
           </View>
-          <View>
-            <Text>Abc</Text>
+          <View style={textStyles.contentText}>
+            <Text>Rua chen</Text>
           </View>
         </View>
         <View style={styles.item}>
           <View style={styles.square}>
-            <Text>02</Text>
+            <Text style={textStyles.squareText}>02</Text>
           </View>
-          <View>
-            <Text>Def</Text>
+          <View style={textStyles.contentText}>
+            <Text>Lau nha</Text>
           </View>
         </View>
       </View>
@@ -45,17 +45,19 @@ const styles = StyleSheet.create({
     paddingHorizontal : 10
   },
   body : {
-    flex: 1
+    flex: 8,
   },
   item : {
     flexDirection : 'row',
     backgroundColor : '#ffffff',
-    paddingVertical : 3,
+    paddingVertical : 5,
     paddingHorizontal : 20,
-    marginBottom : 15,
-    borderRadius : 18,
+    marginBottom : 10,
+    marginHorizontal : 8,
+    borderRadius : 8,
     alignItems : 'center',
     justifyContent : 'space-between'
+
   },
   square : {
     width : 48,
@@ -71,6 +73,14 @@ const textStyles = StyleSheet.create({
   header : {
     fontSize : 26,
     color : '#58cdee',
-    fontWeight : 'bold'
+    fontWeight : 'bold' 
+  },
+  squareText : {
+    color : '#fff',
+    fontWeight : '700'
+  },
+  contentText : {
+    width : '80%',
+    fontSize : 16,
   }
 });
