@@ -7,7 +7,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Text style={styles.header}>
+        <Text style={styles.headerText}>
           Todo List
         </Text>
       </View>

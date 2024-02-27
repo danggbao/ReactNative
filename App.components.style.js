@@ -7,7 +7,8 @@ const styles = StyleSheet.create({
     header : {
       flex : 1,
       paddingTop : 20,
-      paddingHorizontal : 10
+      paddingHorizontal : 20,
+     
     },
     body : {
       flex: 8,
@@ -15,7 +16,7 @@ const styles = StyleSheet.create({
     items : {
       marginVertical : 5,
     },  
-    header : {
+    headerText : {
       fontSize : 26,
       color : '#58cdee',
       fontWeight : 'bold' 
