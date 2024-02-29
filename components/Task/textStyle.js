@@ -1,9 +1,10 @@
 import React from "react";
 import { StyleSheet } from "react-native";
+import colors from "../../contains/colors";
 
 const textStyles = StyleSheet.create({
     squareText : {
-      color : '#fff',
+      color : colors.white,
       fontWeight : '700'
     },
     contentText : {
