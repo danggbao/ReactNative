@@ -3,7 +3,12 @@ import { Text, View, ScrollView } from 'react-native';
 import Task from './components/Task';
 import styles from './App.components.style';
 import Form from './components/Form';
+import React, { useState } from 'react'
 export default function App() {
+  const [taskList, setTaskList] = useState([])
+  const handleAddTask = (task) => {
+    setTaskList([...taskList, task])
+  }
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -13,10 +18,14 @@ export default function App() {
       </View>
       <View style={styles.body}>
         <ScrollView style={styles.items}>
-          <Task></Task>
+          {
+            taskList.map((item, index) => {
+              return <Task />
+            })
+          }
         </ScrollView>
       </View>
-    <Form></Form>
+    <Form onAddTask={handleAddTask}></Form>
     </View>
   );
 }
