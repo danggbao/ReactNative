@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { Text, View, ScrollView } from 'react-native';
+import { Text, View, ScrollView, Alert } from 'react-native';
 import Task from './components/Task';
 import styles from './App.components.style';
 import Form from './components/Form';
@@ -9,6 +9,21 @@ export default function App() {
   const handleAddTask = (task) => {
     setTaskList([...taskList, task])
   }
+  const handleDeleteTask = (index) => {
+    Alert.alert('Thông báo!!!', 'Bạn có chắc chắn muốn xóa?', [
+      {
+        text: 'Cancel',
+        onPress: () => console.log('Cancel Pressed'),
+        style: 'cancel',
+      },
+      {text: 'OK', onPress: () => {
+        let taskListTmp = [...taskList];
+        taskListTmp.splice(index, 1);
+        setTaskList(taskListTmp);
+      }},
+    ]);
+  }
+  
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -20,7 +35,7 @@ export default function App() {
         <ScrollView style={styles.items}>
           {
             taskList.map((item, index) => {
-              return <Task />
+              return <Task key={index} title={item} number={index+1} onDeleteTask={() => handleDeleteTask(index)}/>
             })
           }
         </ScrollView>
